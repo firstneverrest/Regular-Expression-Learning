@@ -10,20 +10,36 @@ regular expression engines are different in each language such as C/C++, Java, J
 You can practise regex skills in [regexr.com](https://regexr.com/).
 
 ## Table of contents
-- [Notation conventions and modes](#notation)
-  - [Flag](#flag)
-- [Grep](#grep)
-- [Literal Characters](#literal)
-- [Meta Characters]
-
-<a name="notation"></a>
+- [Regular Expression (Regex)](#regular-expression-regex)
+  - [Regular Expression Engines](#regular-expression-engines)
+  - [Table of contents](#table-of-contents)
+  - [Notation conventions and modes](#notation-conventions-and-modes)
+    - [Flag - define mode](#flag---define-mode)
+  - [Grep](#grep)
+  - [Literal Characters](#literal-characters)
+  - [Meta characters](#meta-characters)
+    - [wildcard](#wildcard)
+    - [Escaping characters](#escaping-characters)
+    - [Special characters](#special-characters)
+  - [Character Set ([ ])](#character-set--)
+    - [Character Ranges (-)](#character-ranges--)
+    - [Negative Character Sets (^)](#negative-character-sets-)
+    - [Meta character inside character sets](#meta-character-inside-character-sets)
+    - [Shorthand character set](#shorthand-character-set)
+  - [Repetition](#repetition)
+    - [Repetition Meta characters](#repetition-meta-characters)
+    - [Quantified Repetition ({ })](#quantified-repetition--)
+    - [Greedy Expressions](#greedy-expressions)
+    - [Lazy Expressions (?)](#lazy-expressions-)
+  - [Grouping Meta characters (())](#grouping-meta-characters-)
+  - [Alternation (|)](#alternation-)
+  - [Anchors](#anchors)
+  - [Word Boundaries](#word-boundaries)
 
 ## Notation conventions and modes 
 ```
 syntax: /PATTERN/FLAG
 ```
-
-<a name="flag"></a>
 
 ### Flag - define mode
 1. Standard: /re/
@@ -35,22 +51,17 @@ syntax: /PATTERN/FLAG
 
 Tip: you can use multiple flag in one regex like /re/gi
 
-<a name="grep"></a>
-
 ## Grep 
 Grep is a global regular expression print or g/re/p. Grep often used as verb, it means find the string that match with the pattern and print it out. You often see grep in unix-base command in terminal.
-
-<a name="literal"></a>
 
 ## Literal Characters 
 - /cat/ matches "cat"
 - /car/ matches the first three letters of "carnival"
 - case-sensitive and non-global matching (leftmost) by default
 
-<a name="meta characters"></a>
-
 ## Meta characters
 Meta Characters is characters with special meaning
+
 ### wildcard 
 wildcard is a . (period) - match every except new line in a single position such as /h.t/ matches "hat,"
 
@@ -78,7 +89,7 @@ Because when you want to use character set with huge characters, it will become 
 - [0-9] means 0123456789
 - [A-Za-z]
 
-### Negative Character Sets (^) <a name="notation"></a>
+### Negative Character Sets (^)
 Matches not any one of several characters in the set
 - put the ^ in front of other character in []
 - /[^aeiou]/ matches any one that is not aeiou characters
@@ -156,6 +167,7 @@ use to quantified repetition of preceding item
   - $1 matches \d{3}
   - $2 matches \d{4}
   - $1.$2 means 546.5648
+
 
 ## Alternation (|)
 - | is an OR operator 

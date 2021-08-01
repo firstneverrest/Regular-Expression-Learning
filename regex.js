@@ -6,9 +6,10 @@ const findPhoneNumber = (text) => {
 
 const findDateFormat = (text) => {
   const regex = new RegExp(
-    /^\d{4}[/-](0[1-9]|1[012])[/-](0[1-9]|[12][0-9]|3[01])$/g
+    /^\d{4}[\/-](0[1-9]|1[012])[\/-](0[1-9]|[12][0-9]|3[01])$/g
   );
-  const result = regex.exec(text);
+  const result = text.match(regex);
+  // const resultReg = regex.exec(text);
   return result;
 };
 
